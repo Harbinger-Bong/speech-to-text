@@ -1,0 +1,15 @@
+model:
+  size: "small"  # Options: tiny, base, small, medium, large
+  device: "cuda"  # cuda or cpu
+  language: null  # Language code or null for auto-detect
+  
+audio:
+  sample_rate: 16000
+  channels: 1
+  chunk_duration: 5  # seconds for real-time processing
+  
+performance:
+  fp16: true  # Use half-precision on GPU
+  beam_size: 5
+  best_of: 5
+
