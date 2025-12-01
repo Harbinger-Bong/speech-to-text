@@ -1,7 +1,14 @@
-openai-whisper>=20230314
+#Whisper-stt 
+openai-whisper>=20231117
 torch>=2.0.0
 torchaudio>=2.0.0
 numpy>=1.21.0
 sounddevice>=0.4.6
-scipy>=1.9.0
+scipy>=1.7.0
 pyyaml>=6.0
+
+#IndicSTT
+transformers>=4.30.0
+datasets>=2.10.0
+librosa>=0.10.0
+langdetect

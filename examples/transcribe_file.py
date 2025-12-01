@@ -12,7 +12,7 @@ def main():
     stt = WhisperSTT()
     
     # Transcribe a file
-    audio_file = "examples/sample_audio/test.wav"  # Change to your Japanese audio
+    audio_file = "examples/sample_audio/test2.wav"
     
     if not Path(audio_file).exists():
         print(f"Audio file not found: {audio_file}")

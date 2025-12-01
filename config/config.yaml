@@ -1,15 +1,34 @@
 model:
-  size: "small"  # Options: tiny, base, small, medium, large
-  device: "cuda"  # cuda or cpu
-  language: null  # Language code or null for auto-detect
+  size: "small"
+  device: "cuda"
+  compute_type: "float16"
+  language: null
+
+performance:
+  fp16: true
+  beam_size: 5
+  best_of: 5
+
+whisper:
+  model_size: "small"
+  language: null
+  device: "cuda"
   
+indic:
+  model_name: "gvs/wav2vec2-large-xlsr-malayalam"
+  language_code: "ml"
+  device: "cuda"
+
 audio:
   sample_rate: 16000
   channels: 1
-  chunk_duration: 5  # seconds for real-time processing
-  
-performance:
-  fp16: true  # Use half-precision on GPU
-  beam_size: 5
-  best_of: 5
+  chunk_duration: 5
+
+language_detection:
+  enabled: true
+  threshold: 0.6
+  supported_languages:
+    - en
+    - ar
+    - ml
 
