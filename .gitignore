@@ -1,38 +1,45 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
-*.egg
+.Python
+env/
+venv/
+wenv/
 *.egg-info/
 dist/
 build/
 
-# Virtual environments
-.venv/
-venv/
-wenv/
-env/
+# Models and cache (IMPORTANT - Don't push these!)
+models/
+*.nemo
+*.bin
+*.pt
+*.pth
+*.onnx
+*.safetensors
+~/.cache/
 
-# IDEs
+# Hugging Face cache
+.cache/
+*/models--*/
+
+# Audio files
+*.wav
+*.mp3
+*.flac
+examples/sample_audio/*.wav
+
+# IDE
 .vscode/
 .idea/
 *.swp
-
-# Testing
-.pytest_cache/
-.coverage
-
-# Audio files (optional - keep test files but ignore large ones)
-*.wav
-*.mp3
-*.m4a
-*.flac
+*.swo
 
 # OS
 .DS_Store
+Thumbs.db
 
 # Logs
 *.log
-
-# Model cache
-.cache/

@@ -1,6 +1,6 @@
-# Whisper Speech-to-Text (STT)
+# Hybrid Speech-to-Text
 
-Local, offline speech recognition using OpenAI Whisper with GPU acceleration.
+Local, offline speech-to-text system combining OpenAI Whisper with AI4Bharat IndicSTT (Malayalam) for optimal multi-language transcription.
 
 ## Features
 - Real-time microphone transcription
@@ -9,12 +9,12 @@ Local, offline speech recognition using OpenAI Whisper with GPU acceleration.
 - Fully offline and private
 - Configurable model sizes and parameters
 
-## Installation
-```
- git clone https://github.com/Harbinger-Bong/whisper-stt.git
- cd whisper-stt
- pip install -r requirements.txt
-```
+## Architecture
+
+1. **Whisper (Default)**: Fast language detection and transcription for English/Arabic
+2. **IndicSTT**: Specialized Malayalam model, activated when Malayalam detected
+3. **Auto-switching**: Seamless transition between engines
+
 ### Prerequisites
 - Python 3.8-3.11
 - CUDA-capable GPU (optional, recommended for RTX 2050)
@@ -23,29 +23,28 @@ Local, offline speech recognition using OpenAI Whisper with GPU acceleration.
 
 (For best performance, install a CUDA build of PyTorch separately.)
 
+## Installation
+```
+ git clone https://github.com/Harbinger-Bong/whisper-stt.git
+ cd whisper-stt
+ pip install -r requirements.txt
+```
 ## Usage
 
-### Transcribe an audio file
+#### File Transcription
 ``` 
- python examples/transcribe_file.py
+ python examples/hybrid_transcribe.py
 ```
 Edit `examples/transcribe_file.py` to point to your own file in `examples/sample_audio/`.
 
-### Real-time microphone transcription
+#### Real-time GUI
 ``` 
- python examples/transcribe_realtime.py
+ python examples/realtime_hybrid.py
 ```
+## Models Used
 
-
-Speak into your microphone and press Ctrl+C to stop.
-
-## Configuration
-
-Edit `config/config.yaml` to change:
-
-- model size (tiny, base, small, …)
-- device (cuda or cpu)
-- language (e.g. "en", "ja", or null for auto-detect)
+- **Whisper Small**: English, Arabic detection and transcription
+- **Wav2Vec2-Malayalam**: High-accuracy Malayalam transcription (~28% WER)
 
 ## Project structure
 
